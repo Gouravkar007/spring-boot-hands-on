@@ -2,11 +2,16 @@ package com.ltp.gradesubmission;
 
 import java.util.UUID;
 
+import javax.validation.constraints.NotBlank;
+
 public class Grade {
+    @NotBlank(message = "Name cannot be blank")
     private String name;
     private String subject;
+    @NotBlank(message = "Subject cannot be blank")
     private String score;
     private String id;
+
 
     public Grade() {
         this.id = UUID.randomUUID().toString();
@@ -36,13 +41,13 @@ public class Grade {
         this.score = score;
     }
 
+
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
-
 
 }

@@ -5,10 +5,12 @@ import java.util.UUID;
 import javax.validation.constraints.NotBlank;
 
 public class Grade {
+
     @NotBlank(message = "Name cannot be blank")
     private String name;
-    private String subject;
     @NotBlank(message = "Subject cannot be blank")
+    private String subject;
+    @Score(message = "Score must be a letter grade")
     private String score;
     private String id;
 

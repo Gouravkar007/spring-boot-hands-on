@@ -3,28 +3,30 @@ package com.ltp.gradesubmission.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ltp.gradesubmission.Grade;
 
-//this a repositruy class wich is do all CURD opretions
+import org.springframework.stereotype.Repository;
+
+import com.ltp.gradesubmission.Grade;
+@Repository
 
 public class GradeRepository {
+    
+    private List<Grade> studentGrades = new ArrayList<>();
 
-      private List<Grade> studentGrades = new ArrayList<>();
-
-      public Grade getGrade(int index){
+    public Grade getGrade(int index) {
         return studentGrades.get(index);
-      }
-      
-      public void addGrade(Grade grade){
+    }
+
+    public void addGrade(Grade grade) {
         studentGrades.add(grade);
-      }
+    }
 
-      public void updateGrade(Grade grade , int index){
-        studentGrades.set(0, grade);
-      }
-
-      public List<Grade> getGrades(){
+    public void updateGrade(Grade grade, int index) {
+        studentGrades.set(index, grade);
+    }
+    
+    public List<Grade> getGrades() {
         return studentGrades;
-      }
+    }
 
 }
